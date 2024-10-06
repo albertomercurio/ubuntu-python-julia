@@ -14,6 +14,9 @@ RUN apt install -y ffmpeg
 USER vscode
 WORKDIR /home/vscode
 
+# Set a generic x86_64 CPU target for Julia, see https://github.com/docker-library/julia/issues/79
+ENV JULIA_CPU_TARGET generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)
+
 # Install Julia using devcontainer feature (use non-interactive mode to bypass prompts)
 RUN curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel release
 ENV PATH="/home/vscode/.juliaup/bin:${PATH}"
@@ -23,4 +26,4 @@ COPY Project.toml .
 COPY Manifest.toml .
 
 # Instantiate Julia environment
-RUN julia --project -e 'using Pkg; Pkg.instantiate()'
+RUN julia -e 'using Pkg; Pkg.instantiate()'
