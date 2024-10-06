@@ -18,12 +18,12 @@ WORKDIR /home/vscode
 ENV JULIA_CPU_TARGET generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)
 
 # Install Julia using devcontainer feature (use non-interactive mode to bypass prompts)
-RUN curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel release
+RUN curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel 1.10
 ENV PATH="/home/vscode/.juliaup/bin:${PATH}"
 
 # Copy Julia Project files to the root directory of the container
-COPY Project.toml .
-COPY Manifest.toml .
+COPY Project.toml .julia/environments/v1.10/
+COPY Manifest.toml .julia/environments/v1.10/
 
 # Instantiate Julia environment
 RUN julia -e 'using Pkg; Pkg.instantiate()'
