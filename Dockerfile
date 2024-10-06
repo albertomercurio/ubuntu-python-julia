@@ -16,6 +16,7 @@ WORKDIR /home/vscode
 
 # Set a generic x86_64 CPU target for Julia, see https://github.com/docker-library/julia/issues/79
 ENV JULIA_CPU_TARGET generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)
+ENV JULIA_NUM_THREADS=auto
 
 # Install Julia using devcontainer feature (use non-interactive mode to bypass prompts)
 RUN curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel 1.10
