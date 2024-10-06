@@ -11,8 +11,7 @@ RUN sudo apt install -y ffmpeg
 
 # Install Julia using devcontainer feature (use non-interactive mode to bypass prompts)
 RUN curl -fsSL https://install.julialang.org | sh -s -- --yes --default-channel release
-# ENV PATH="/root/.juliaup/bin:${PATH}"
-RUN . /root/.bashrc && . /root/.profile && . /root/.zshrc
+ENV PATH="/root/.juliaup/bin:${PATH}"
 
 # Copy Julia Project files to the root directory of the container
 COPY Project.toml /root/Project.toml
@@ -22,4 +21,4 @@ COPY Manifest.toml /root/Manifest.toml
 RUN julia --project=/root -e 'using Pkg; Pkg.instantiate()'
 
 # Set default command (bash)
-# CMD ["/bin/bash"]
+CMD ["/bin/bash"]
