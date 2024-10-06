@@ -1,2 +1,2 @@
-# ubuntu-python-julia-matlab
-Docker container with Ubuntu - Python - Julia - MATLAB
+# ubuntu-python-julia
+Docker container with Ubuntu - Python - Julia

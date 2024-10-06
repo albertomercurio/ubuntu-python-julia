@@ -6,7 +6,6 @@
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 	"features": {
 		"ghcr.io/julialang/devcontainer-features/julia:1": {},
-		"ghcr.io/mathworks/devcontainer-features/matlab:0": {},
         "ghcr.io/devcontainers/features/python:1": {
 			"installTools": true,
 			"installJupyterlab": true,
