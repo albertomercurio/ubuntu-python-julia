@@ -4,3 +4,4 @@ qutip
 matplotlib
 setuptools
 jupyterlab
+jax
