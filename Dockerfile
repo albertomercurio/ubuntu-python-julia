@@ -1,5 +1,5 @@
 # Start from the base devcontainer image
-FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
+FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
 USER root
 
