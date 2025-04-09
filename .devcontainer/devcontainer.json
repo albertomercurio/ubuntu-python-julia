@@ -9,7 +9,7 @@
         "ghcr.io/devcontainers/features/python:1": {
 			"installTools": true,
 			"installJupyterlab": true,
-			"version": "3.13"
+			"version": "3.12"
 		}
 	},
 
@@ -25,6 +25,9 @@
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/opt/venv/bin/python"
+			},
 			"extensions": [
                 "ms-python.python",
 				"julialang.language-julia",

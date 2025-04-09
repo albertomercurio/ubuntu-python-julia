@@ -10,6 +10,12 @@ RUN python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --upgrade pip \
     && /opt/venv/bin/pip install -r /tmp/requirements.txt
 
+# Install the Jupyter kernel for the Python virtual environment
+RUN /opt/venv/bin/python -m ipykernel install \
+    --prefix=/usr/local \
+    --name python-complete \
+    --display-name "🐍 Python (Complete venv)"
+
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Install ffmpeg for animation support
